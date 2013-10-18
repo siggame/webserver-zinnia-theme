@@ -12,3 +12,4 @@ clean:
 db:
 	rm -f demo_zinnia_bootstrap/demo.db
 	bin/demo syncdb --noinput
+	bin/demo loaddata demo_zinnia_bootstrap/fixtures/initial_data.json
