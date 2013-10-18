@@ -4,6 +4,7 @@ import os
 gettext = lambda s: s
 
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {'default':
              {'ENGINE': 'django.db.backends.sqlite3',
@@ -15,6 +16,8 @@ TIME_ZONE = 'Europe/Paris'
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
+
+ZINNIA_MARKUP_LANGUAGE = 'markdown'
 
 SECRET_KEY = 'jo-1rzm(%sf)3#n+fb7h945ybv3xpt63abhi12_t7e^^5q8dyw'
 
@@ -36,6 +39,7 @@ LANGUAGES = (
     ('hu', gettext('Hungarian')),
     ('cs', gettext('Czech')),
     ('sk', gettext('Slovak')),
+    ('lt', gettext('Lithuanian')),
     ('ru', gettext('Russian')),
     ('pl', gettext('Polish')),
     ('eu', gettext('Basque')),
@@ -64,7 +68,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
-    'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
     'zinnia.context_processors.version',
 )
