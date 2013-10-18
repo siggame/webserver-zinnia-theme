@@ -17,6 +17,8 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
+ZINNIA_MARKUP_LANGUAGE = 'markdown'
+
 SECRET_KEY = 'jo-1rzm(%sf)3#n+fb7h945ybv3xpt63abhi12_t7e^^5q8dyw'
 
 USE_TZ = True
