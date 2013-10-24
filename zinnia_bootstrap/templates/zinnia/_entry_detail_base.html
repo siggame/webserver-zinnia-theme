@@ -5,9 +5,7 @@
   <header class="entry-header">
     {% block entry-title %}
     <h2 class="entry-title">
-      <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
-        {{ object.title }}
-      </a>
+      {{ object.title }}
     </h2>
     {% endblock %}
     {% block entry-info %}
@@ -60,22 +58,20 @@
       {{ object_content }}
     </div>
     {% endblock %}
-    {% block continue-reading %}
-    {% if continue_reading %}
-    <p class="continue-reading">
-      <a href="{{ object.get_absolute_url }}"
-         title="{% blocktrans with object=object.title %}Continue reading {{ object }}{% endblocktrans %}"
-         rel="bookmark" class="btn btn-primary">
-        {% trans "Continue reading" %}
-      </a>
-    </p>
-    {% endif %}
-    {% endblock %}
   </div>
   {% endblock %}
 
   {% block entry-footer %}
-  <footer class="entry-footer well">
+  <footer class="entry-footer well well-small">
+    {% block continue-reading %}
+    {% if continue_reading %}
+    <a href="{{ object.get_absolute_url }}"
+       title="{% blocktrans with object=object.title %}Continue reading {{ object }}{% endblocktrans %}"
+       rel="bookmark" class="btn btn-info pull-right">
+      {% trans "Continue reading" %}
+    </a>
+    {% endif %}
+    {% endblock %}
     {% block entry-tags %}
     <p class="entry-tags">
       <i class="icon-tags"></i> <strong>{% trans "Tags" %}</strong> :
@@ -138,3 +134,6 @@
   </footer>
   {% endblock %}
 </article>
+<br>
+<hr>
+<br>
